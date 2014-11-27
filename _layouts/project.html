@@ -9,13 +9,7 @@ layout: default
 
         {% include carousel.html %}
 
-        <div class="col-lg-5 col-lg-offset-1">
-            <div class="spacing"></div>
-
-            {{ content }}
-
-        </div>
-        <div class="col-lg-4 col-lg-offset-1">
+        <div class="col-lg-3 col-lg-offset-1">
             <div class="spacing"></div>
             <h4>Project Details</h4>
             <div class="hline"></div>
@@ -26,7 +20,40 @@ layout: default
             <p><b>Client:</b> {{ page.client }}</p>
             <p><b>Website:</b> <a href="{{ page.website }}">{{ page.website }}</a></p>
         </div>
+        <div class="col-lg-7 col-lg-offset">
+            <div class="spacing"></div>
+
+            {{ content }}
+
+            <! -- BLOG POSTS LIST -->
+            <div class="col-lg-offset">
+
+                {% for post in site.categories['project logs'] %}
+                {% if post.project[0] == page.tags[0] %}
+                {% if notempty != 'true' %}
+                <h4>Project logs</h4>
+                {% endif %}
+                {% assign notempty = 'true' %}
+                <! -- Blog Post -->
+                <!--
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ post.img }}">
+                </a> 
+                -->   
+                <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="ctitle">{{ post.title }}</h4></a>
+                <p><csmall>{{ post.date | date: "%b %-d, %Y" }}. | By: {{ post.author }}</csmall></p>
+                {{ post.excerpt }}
+                <p><a href="{{ post.url | prepend: site.baseurl }}">[Read More]</a></p>
+                <div class="hline"></div>
+                {% endif %}
+                {% endfor %}
+                {% if notempty != 'true' %}
+                <h4>No project logs yet...</h4>
+                {% endif %}
+            </div><! --/col-lg-8 -->
+
+        </div>
     </div><! --/row -->
 </div><! --/container -->
-	 
+
 {% include portfolio.html title="Related Works." limit=5 %}
