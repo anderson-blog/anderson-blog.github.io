@@ -1,0 +1,32 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators" style="margin-bottom: 500px;">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        {% assign fpost = site.categories['blog'][0] %}
+        <div class="item active">
+            <a href="{{ fpost.url | prepend: site.baseurl }}">
+                <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ fpost.img }}">
+            </a>    
+            <a href="{{ fpost.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ fpost.title }}</h3></a>
+            <p><csmall>{{ fpost.date | date: "%b %-d, %Y" }}. | By: {{ fpost.author }}</csmall></p>
+            {{ fpost.excerpt }}
+        </div>
+        {% for post in site.categories['blog'] limit:3  offset:1 %}
+        <div class="item">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+                <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ post.img }}">
+            </a>    
+            <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
+            <p><csmall>{{ post.date | date: "%b %-d, %Y" }}. | By: {{ post.author }}</csmall></p>
+            {{ post.excerpt }}
+        </div>
+        {% endfor %}
+    </div>
+</div><! --/Carousel -->

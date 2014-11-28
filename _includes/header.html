@@ -1,15 +1,163 @@
-<div id="headerwrap">
+<div id="blue" style="margin-bottom: 0;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h3>Show your work with this beautiful theme</h3>
-                <h1>Eyecatching Bootstrap 3 Theme.</h1>
-                <h5>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h5>
-                <h5>More Lorem Ipsum added here too.</h5>				
-            </div>
-            <div class="col-lg-8 col-lg-offset-2 himg">
-                <img src="{{ "/assets/img/browser.png" | prepend: site.baseurl }}" class="img-responsive">
-            </div>
+            <h3>My Timeline</h3>
         </div><!-- /row -->
     </div> <!-- /container -->
+</div><!-- /blue -->
+<div id="headerwrap" style="padding-top: 0;">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+
+    <script src="{{ "/assets/js/jquery.subwayMap-0.5.0.js" | prepend: site.baseurl }}"></script>
+
+    <style type="text/css">
+
+        /* The main DIV for the map */
+        .subway-map
+        {
+            width: 880px;
+            height:640px;
+            margin: 0 auto;
+        }
+
+        /* Text labels */
+        .text
+        {
+            font-family:  'Raleway', sans-serif;
+            text-decoration: none;
+            font-weight: 600;
+            color: white;
+        }
+
+        #legend
+        {
+            font-family:  'Raleway', sans-serif;
+            font-weight: 600;
+            color: white;
+            padding-bottom: 15px;
+        }
+
+        #legend div
+        {
+            height: 25px;
+        }
+
+        #legend span
+        {
+            margin: 5px 5px 5px 15px;
+        }
+        .subway-map span
+        {
+            margin: 5px 5px 5px 0;
+        }
+
+    </style>
+
+    <div class="subway-map" data-columns="22" data-rows="16" data-cellSize="40" data-legendId="legend" data-textClass="text" data-gridNumbers="true" data-grid="true" data-lineWidth="9">
+       <ul data-color="#ff0000" data-label="Hardware Dev" data-shiftCoords="-1,0">
+        <li data-coords="7.0,2.0"> </li>
+        <li data-coords="7.0,10.0"> </li>
+        <li data-coords="7.0,13.0"> </li>
+        <li data-coords="9.0,15.0"> </li>
+        <li data-coords="13.0,15.0"> </li>
+        <li data-coords="15.0,14.0"> </li>
+        <li data-coords="15.0,9.0"> </li>
+        <li data-coords="13.0,8.0"> </li>
+        <li data-coords="13.0,7.8" data-marker="@interchange">Arduino</li>
+        <li data-coords="11.0,8.0"> </li>
+        <li data-coords="9.0,7.0" data-dir="W">big pcb</li>
+        <li data-coords="9.0,6.0"> </li>
+        <li data-coords="9.0,5.0"> </li>
+        <li data-coords="11.0,4.0" data-dir="N"> </li>
+        <li data-coords="15.0,4.0"> </li>
+        <li data-coords="17.0,3.0" data-dir="E"> </li>
+    </ul>
+    <ul data-color="#00ff00" data-label="Programming" data-shiftCoords="0,0">
+        <li data-coords="1.0,3.0"> </li>
+        <li data-coords="3.0,4.0" data-dir="S"> </li>
+        <li data-coords="5.0,5.0" data-dir="E"> </li>
+        <li data-coords="5.0,6.0"> </li>
+        <li data-coords="5.0,7.0"> </li>
+        <li data-coords="5.0,8.0"> </li>
+        <li data-coords="5.0,9.0"> </li>
+        <li data-coords="3.0,11.0"> </li>
+        <li data-coords="1.0,12.0" data-dir="W"> </li>
+        <li data-coords="7.0,15.0" data-dir="W"> </li>
+        <li data-coords="9.0,13.0"> </li>
+        <li data-coords="11.0,13.0"> </li>
+        <li data-coords="11.0,12.0"> </li>
+        <li data-coords="11.0,11.0"> </li>
+        <li data-coords="11.0,10.0"> </li>
+        <li data-coords="13.0,9.0"> </li>
+        <li data-coords="13.0,8.0"> </li>
+        <li data-coords="13.0,5.0"> </li>
+        <li data-coords="11.0,4.0"> </li>
+        <li data-coords="13.0,3.0"> </li>
+        <li data-coords="13.0,2.0"> </li>
+        <li data-coords="13.0,1.0"> </li>
+        <li data-coords="17.0,1.0"> </li>
+        <li data-coords="17.0,2.0"> </li>
+        <li data-coords="17.0,3.0"> </li>
+        <li data-coords="17.0,4.0"> </li>
+        <li data-coords="19.0,5.0" data-dir="S"> </li>
+        <li data-coords="19.0,6.0"> </li>
+        <li data-coords="19.0,7.0"> </li>
+        <li data-coords="19.0,8.0"> </li>
+        <li data-coords="19.0,9.0"> </li>
+        <li data-coords="19.0,10.0"> </li>
+        <li data-coords="19.0,11.0"> </li>
+    </ul>
+    <ul data-color="#1fc9c7" data-label="VB.net" data-shiftCoords="-1,0">
+        <li data-coords="5.0,5.0"> </li>
+        <li data-coords="5.0,6.0"> </li>
+        <li data-coords="3.0,7.0" data-dir="S"> </li>
+        <li data-coords="1.0,8.0" data-dir="W"> </li>
+        <li data-coords="1.0,12.0"> </li>
+    </ul>
+    <ul data-color="#ffa903" data-label="C/C++" data-shiftCoords="0,-1">
+        <li data-coords="3.0,4.0"> </li>
+        <li data-coords="3.0,11.0"> </li>
+        <li data-coords="3.0,13.0"> </li>
+        <li data-coords="2.6,13.0" data-marker="@interchange" data-markerInfo="h2"> </li>
+        <li data-coords="5.0,14.0" data-dir="S"> </li>
+        <li data-coords="5.0,12.0"> </li>
+        <li data-coords="7.0,11.0"> </li>
+        <li data-coords="9.0,11.0"> </li>
+        <li data-coords="11.0,10.0" data-dir="E"> </li>
+        <li data-coords="11.0,4.0"> </li>
+    </ul>
+    <ul data-color="#0315ff" data-label="Shell Script & Linux" data-shiftCoords="1,1">
+        <li data-coords="5.0,7.0"> </li>
+        <li data-coords="5.0,8.0"> </li>
+        <li data-coords="5.0,9.0"> </li>
+        <li data-coords="5.0,10.0"> </li>
+        <li data-coords="7.0,11.0" data-dir="S"> </li>
+        <li data-coords="11.0,13.0"> </li>
+        <li data-coords="13.0,12.0" data-dir="E"> </li>
+        <li data-coords="13.0,9.0">Prog</li>
+    </ul>
+    <ul data-color="#cf11e5" data-label="Java" data-shiftCoords="1,1">
+        <li data-coords="13.0,5.0"> </li>
+        <li data-coords="13.2,5.1" data-marker="@interchange"> </li>
+        <li data-coords="13.0,3.0"> </li>
+        <li data-coords="13.0,2.0"> </li>
+        <li data-coords="13.0,1.0"> </li>
+        <li data-coords="17.0,1.0"> </li>
+        <li data-coords="17.0,2.0"> </li>
+        <li data-coords="19.0,3.0" data-dir="E"> </li>
+        <li data-coords="19.0,5.0"> </li>
+        <li data-coords="19.0,6.0"> </li>
+        <li data-coords="19.0,7.0"> </li>
+        <li data-coords="19.0,8.0"> </li>
+        <li data-coords="19.0,9.0"> </li>
+        <li data-coords="19.0,10.0"> </li>
+        <li data-coords="19.0,11.0"> </li>
+        <li data-coords="19.2,11.1" data-marker="@interchange"> </li>
+    </ul>
+</div>
+<div id="legend"></div>    
+
+<script type="text/javascript">
+    $(".subway-map").subwayMap({ debug: true });
+</script>
 </div><!-- /headerwrap -->
