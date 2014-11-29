@@ -6,7 +6,7 @@
     </div> <!-- /container -->
 </div><!-- /blue -->
 <div id="headerwrap" style="padding-top: 40px;">
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
 
     <script src="{{ "/assets/js/jquery.subwayMap-0.5.0.js" | prepend: site.baseurl }}"></script>
 
@@ -55,21 +55,21 @@
 
     <div class="subway-map" data-columns="20" data-rows="16" data-cellSize="40" data-legendId="legend" data-textClass="text" data-gridNumbers="true" data-grid="false" data-lineWidth="9" data-reverseMarkers="true">
        <ul data-color="#ff0000" data-label="Hardware Dev" data-shiftCoords="-1,0">
-        <li data-coords="7.0,2.0" data-labelPos="W">Learned Basic Eletronics</li>
-        <li data-coords="7.0,10.0">portas logicas</li>
+        <li data-coords="7.0,2.0" data-labelPos="W" fa-icon="book">  Basic Electronics</li>
+        <li data-coords="7.0,10.0" data-labelPos="NE" fa-icon="book">  TTL Logic Gates</li>
         <li data-coords="7.0,12.0"></li>
         <li data-coords="8.0,13.0" data-dir="S"></li>
-        <li data-coords="10.0,15.0">manual pcb</li>
+        <li data-coords="10.0,15.0" fa-icon="book"> Homemade PCBs</li>
         <li data-coords="13.0,15.0"></li>
         <li data-coords="14.0,15.0"></li>
-        <li data-coords="15.0,14.0" data-dir="E">leitor de cartors</li>
+        <li data-coords="15.0,14.0" data-dir="E" data-labelPos="E">Papper Card Reader</li>
         <li data-coords="15.0,9.0"></li>
         <li data-coords="14.0,8.0"></li>
         <li data-coords="13.0,8.0"></li>
-        <li data-coords="13.0,8" data-marker="@interchange" data-labelPos="NE">Arduino</li>
+        <li data-coords="13.0,8" data-marker="@interchange" data-labelPos="NE" fa-icon="book">  Arduino</li>
         <li data-coords="10.0,8.0"></li>
-        <li data-coords="9.0,7.0" data-dir="W">big pcb</li>
-        <li data-coords="9.0,6.0">calc</li>
+        <li data-coords="9.0,7.0" data-dir="W" data-labelPos="E" fa-icon="book"> SMD &\nHD PCBs</li>
+        <li data-coords="9.0,6.0" data-labelPos="W">Binary\nCalc</li>
         <li data-coords="9.0,5.0"></li>
         <li data-coords="10.0,4.0" data-dir="N"></li>
         <li data-coords="11.1,4.0" data-marker="@interchange" data-labelPos="NW">F*Cube</li>
@@ -80,14 +80,14 @@
 
     <ul data-color="#cf11e5" data-label="Java" data-shiftCoords="1,1">
         <li data-coords="13.0,5.0"></li>
-        <li data-coords="13.1,5.1" data-marker="@interchange" data-labelPos="E">Learned\nJava</li>
+        <li data-coords="13.1,5.1" data-marker="@interchange" data-labelPos="E" fa-icon="book"> Java</li>
         <li data-coords="13.0,3.0"></li>
         <li data-coords="13.1,3.0" data-marker="@interchange" data-labelPos="E">Dragon\nCurve</li>
         <li data-coords="13.0,2.0"></li>
         <li data-coords="13.1,2.0" data-marker="@interchange" data-labelPos="W">Traffic Simulator</li>
-        <li data-coords="13.0,0.9"></li>
-        <li data-coords="13.1,1.0" data-marker="@interchange" data-labelPos="E">ED</li>
-        <li data-coords="13.8,0.1"></li>
+        <li data-coords="12.98,1.0"></li>
+        <li data-coords="13.1,1.0" data-marker="@interchange" data-labelPos="E" fa-icon="book">  Data\nStructures</li>
+        <li data-coords="14.0,0.1"></li>
 		<li data-coords="15.7,0.1"></li>
         <li data-coords="16.56,0.9" data-dir="E"></li>
         <li data-coords="16.9,1.0" data-marker="@interchange" data-labelPos="E">Java RCSS Monitor3D</li>
@@ -106,9 +106,9 @@
         <li data-coords="19.0,9.0"></li>
         <li data-coords="19.1,9.0" data-marker="@interchange" data-labelPos="W">Eye-Fi</li>
         <li data-coords="19.0,10.0"></li>
-        <li data-coords="19.1,10.0" data-marker="@interchange" data-labelPos="E">Learned Database</li>
+        <li data-coords="19.1,10.0" data-marker="@interchange" data-labelPos="E" fa-icon="book"> SQL</li>
         <li data-coords="19.0,11.0"></li>
-        <li data-coords="19.1,11.1" data-marker="@interchange" data-labelPos="W">Maya</li>
+        <li data-coords="19.1,11.1" data-marker="@interchange" data-labelPos="E">Maya</li>
     </ul>
     <ul data-color="#00ff00" data-label="Programming" data-shiftCoords="0,0">
         <li data-coords="1.0,3.0"></li>
@@ -125,8 +125,8 @@
         <li data-coords="7.0,15.0" data-dir="W">Octave</li>
         <li data-coords="9.0,13.0"></li>
         <li data-coords="11.0,13.0"></li>
-        <li data-coords="11.0,12.0">Processing</li>
-        <li data-coords="11.0,11.0">QrCode</li>
+        <li data-coords="11.0,12.0" data-labelPos="E" fa-icon="book">\nProcessing</li>
+        <li data-coords="11.0,11.0" data-labelPos="W">QRCode C.</li>
         <li data-coords="11.0,10.0"></li>
         <li data-coords="12.0,10.0"></li>
         <li data-coords="13.0,9.0" data-dir="E"></li>
@@ -137,13 +137,13 @@
 		<li data-coords="12.2,3.0"></li>
         <li data-coords="13.0,3.0"></li>
         <li data-coords="13.0,2.0"></li>
-        <li data-coords="13.0,1.0"></li>
-        <li data-coords="14.0,0.0"></li>
-        <li data-coords="15.9,0.0"></li>
+        <li data-coords="13.0,1.04"></li>
+        <li data-coords="14.4,0.1"></li>
+        <li data-coords="15.9,0.1"></li>
         <li data-coords="17.0,0.95" data-dir="E"></li>
         <li data-coords="17.0,2.0"></li>
         <li data-coords="17.0,3.0"></li>
-        <li data-coords="17.0,4.0" data-labelPos="E">Tales Of Heitor</li>
+        <li data-coords="17.0,4.0" data-labelPos="E">Tales Of\nHeitor</li>
         <li data-coords="18.0,5.0" data-dir="S"></li>
         <li data-coords="19.0,5.0"></li>
         <li data-coords="19.0,6.0"></li>
@@ -155,7 +155,7 @@
     </ul>
     <ul data-color="#1fc9c7" data-label="VB.net" data-shiftCoords="-1,0">
         <li data-coords="5.0,5.0"></li>
-        <li data-coords="4.9,5.0" data-marker="@interchange" data-labelPos="E">Learned\nVB.net</li>
+        <li data-coords="4.9,5.0" data-marker="@interchange" data-labelPos="NE" fa-icon="book">\nVB.net</li>
         <li data-coords="5.0,6.0"></li>
         <li data-coords="4.9,6.0" data-marker="@interchange" data-labelPos="W">Game of\nLife</li>
         <li data-coords="4.0,7.0" data-dir="S"></li>
@@ -166,11 +166,11 @@
     </ul>
     <ul data-color="#ffa903" data-label="C/C++" data-shiftCoords="0,-1">
     	<li data-coords="1.0,3.0"></li>
-    	<li data-coords="1.0,2.9" data-marker="@interchange">C</li>
+    	<li data-coords="1.0,2.9" data-marker="@interchange" data-labelPos="W" fa-icon="book"> \nBasic C/C++</li>
         <li data-coords="3.0,4.0"></li>
-        <li data-coords="3.0,3.9" data-marker="@interchange">Milho grande</li>
+        <li data-coords="3.0,3.9" data-marker="@interchange" data-labelPos="SW">Quiz SMG</li>
         <li data-coords="3.0,11.0"></li>
-        <li data-coords="0.9,10.9" data-marker="@interchange" data-markerInfo="h9">String Vb -> C</li>
+        <li data-coords="0.9,10.9" data-marker="@interchange" data-markerInfo="h9" data-labelPos="W">VB.net Strings in C</li>
         <li data-coords="3.0,13.0"></li>
         <li data-coords="3.0,12.9" data-marker="@interchange" data-labelPos="S">Life\n2.0</li>
         <li data-coords="5.0,14.0"></li>
@@ -183,20 +183,20 @@
     </ul>
     <ul data-color="#0315ff" data-label="Shell Script & Linux" data-shiftCoords="1,2">
         <li data-coords="5.0,6.6"></li>
-        <li data-coords="5.1,7.0" data-marker="@interchange">ShellScript</li>
+        <li data-coords="5.1,7.0" data-marker="@interchange" data-labelPos="NE" fa-icon="book">\nShell\nScript</li>
         <li data-coords="5.0,8.0"></li>
-        <li data-coords="5.1,8.0" data-marker="@interchange">TCC</li>
+        <li data-coords="5.1,8.0" data-marker="@interchange" data-labelPos="W">TCC</li>
         <li data-coords="5.0,9.0"></li>
-        <li data-coords="5.1,9.0" data-marker="@interchange">BlackSheep 2.0</li>
+        <li data-coords="5.1,9.0" data-marker="@interchange" data-labelPos="E">Black\nSheep\n2.0</li>
         <li data-coords="5.0,10.0"></li>
         <li data-coords="6.0,11.0" data-dir="S"></li>
         <li data-coords="9.0,11.0" data-dir="S"></li>
         <li data-coords="11.0,13.0"></li>
-        <li data-coords="11.0,13.4" data-marker="@interchange" data-markerInfo="v2">prog</li>
+        <li data-coords="11.0,13.4" data-marker="@interchange" data-markerInfo="v2">PROG</li>
         <li data-coords="12.0,13.0"></li>
         <li data-coords="13.0,12.0" data-dir="E"></li>
         <li data-coords="13.0,8.6"></li>
-        <li data-coords="13.1,9.0" data-marker="@interchange" data-labelPos="W">PROG</li>
+        <li data-coords="13.1,9.0" data-marker="@interchange" data-labelPos="W">PROG+GA</li>
     </ul>
 </div>
 <div id="legend"></div>    
