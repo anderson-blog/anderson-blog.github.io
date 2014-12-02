@@ -379,7 +379,7 @@ THE SOFTWARE.
         switch(data.labelPos.toLowerCase())
         {
             case "n":
-                pos = "text-align: center; margin: 0 0 " + offset + "px " + centerOffset;
+                pos = "text-align: center; margin: -" + offset*2.4 + "px 0 0 " + centerOffset;
                 topOffset = offset * 2;
                 break;
             case "w":
@@ -414,7 +414,6 @@ THE SOFTWARE.
                 break;
         }
         var style = (textClass != "" ? "class='" + textClass + "' " : "") + "style='" + (textClass == "" ? "font-size:8pt;font-family:Verdana,Arial,Helvetica,Sans Serif;text-decoration:none;" : "") + "width:100px;" + (pos != "" ? pos : "") + ";position:absolute;top:" + (ty) + "px;left:" + (x) + "px;z-index:3000;'";
-
         /*var style = (textClass != "" ? "class='" + textClass + "' " : "") + "style='" + (textClass == "" ? "font-size:8pt;font-family:Verdana,Arial,Helvetica,Sans Serif;text-decoration:none;" : "") + "width:100px;" + (pos != "" ? pos : "") + ";position:absolute;top:" + (y + el.offset().top - (topOffset > 0 ? topOffset : 0)) + "px;left:" + (x + el.offset().left) + "px;z-index:3000;'";*/
         if (data.link != "")
             $("<a " + style + " title='" + data.title.replace(/\\n/g,"<br />") + "' href='" + data.link + "' target='_new'>" + data.fontAwesomeIcon + data.label.replace(/\\n/g,"<br />") + "</span>").appendTo(el);
