@@ -208,7 +208,7 @@ a:focus {
 #headerwrap {
 	background-color: {{ site.colors.secondary }};
 	min-height: 550px;
-	padding-top: 100px;
+	padding-top: 40px;
 	padding-bottom: 0px;
 }
 
@@ -220,10 +220,6 @@ a:focus {
 #headerwrap h1 {
 	color: white;
 	margin-bottom: 25px;
-}
-
-#headerwrap .img-responsive {
-	margin: 0 auto;
 }
 
 /* Services Wrap */
