@@ -13,12 +13,22 @@ layout: default
             <div class="spacing"></div>
             <h4>Project Details</h4>
             <div class="hline"></div>
-            <p><b>Date:</b> {{ page.date | date: "%b %-d, %Y" }}</p>
-            <p><b>Author:</b> {{ page.author }}</p>
-            <p><b>Categories:</b> {{ page.categories }}</p>
-            <p><b>Tagged:</b> Flat, UI, Development</p>
-            <p><b>Client:</b> {{ page.client }}</p>
+            
+            {% if page.started != nill %}
+            <p><b>Started:</b> {{ page.started }}</p>
+            {% endif %}
+            
+            {% if page.ended != nill %}
+            <p><b>Ended:</b> {{ page.ended }}</p>
+            {% endif %}
+
+            {% if page.website != nill %}
             <p><b>Website:</b> <a href="{{ page.website }}">{{ page.website }}</a></p>
+            {% endif %}
+
+            <p><b>Tagged:</b>
+            {% for tag in page.tags %}{{ tag }}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+
         </div>
         <div class="col-lg-7 col-lg-offset">
             <div class="spacing"></div>

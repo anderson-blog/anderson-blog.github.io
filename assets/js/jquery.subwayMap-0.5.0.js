@@ -101,6 +101,8 @@ THE SOFTWARE.
 
         var legendId = el.attr("data-legendId");
         if (legendId === undefined) legendId = "";
+        var legend2Id = el.attr("secondary-data-legendId");
+        if (legend2Id === undefined) legend2Id = "";
 
         var gridNumbers = el.attr("data-gridNumbers");
         if ((gridNumbers === undefined) || (gridNumbers.toLowerCase() == "false"))
@@ -205,6 +207,14 @@ THE SOFTWARE.
             if ((lineLabels.length > 0) && (legendId != ""))
             {
                 var legend = $("#" + legendId);
+
+                for(var line=0; line<lineLabels.length; line++)
+                    legend.append("<div><span style='float:left;width:100px;height:" + lineWidth + "px;background-color:" + lineLabels[line].color + "'></span>" + lineLabels[line].label + "</div>");
+            }
+
+            if ((lineLabels.length > 0) && (legend2Id != ""))
+            {
+                var legend = $("#" + legend2Id);
 
                 for(var line=0; line<lineLabels.length; line++)
                     legend.append("<div><span style='float:left;width:100px;height:" + lineWidth + "px;background-color:" + lineLabels[line].color + "'></span>" + lineLabels[line].label + "</div>");
