@@ -12,15 +12,12 @@
             <p class="rss-subscribe">Subscribe to this blog <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.</p>
         </p>
     <div class="spacing"></div>
-    <h4>Categories</h4>
-    <div class="hline"></div>
-    {% for category in site.categories %}{% unless category.first == "blog" or category.first == "project" or category.first == "question" %}
-        <p>
-            <a href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first | capitalize }}</a>
-            <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
-        </p>
-    {% endunless %}{% endfor %}
 
+    <h4>Quick Notes</h4>
+    <div class="hline"></div>
+    {% for post in site.categories['quicknote'] %} 
+        <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+    {% endfor %}
     <div class="spacing"></div>
 
     <h4>Recent Posts</h4>
@@ -37,6 +34,18 @@
 
     <div class="spacing"></div>
 
+    <h4>Categories</h4>
+    <div class="hline"></div>
+    {% for category in site.categories %}{% unless category.first == "blog" or category.first == "project" or category.first == "question" %}
+        <p>
+            <a href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first | capitalize }}</a>
+            <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+        </p>
+    {% endunless %}{% endfor %}
+
+    <div class="spacing"></div>
+
+    <!--
     <h4>Popular Tags</h4>
     <div class="hline"></div>
     <p>
@@ -44,4 +53,5 @@
             <a class="btn btn-theme" href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}" role="button">{{ category | first | capitalize }} ({{ category | last | size }})</a>	         
         {% endunless %}{% endfor %}
     </p>
+    -->
 </div>

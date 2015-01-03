@@ -119,6 +119,8 @@ a:focus {
 .navbar-default {
 	background-color: {{ site.colors.secondary }};
 	border-color: transparent;
+	background-image: url("{{ site.baseurl }}/assets/img/background.png");
+    background-repeat: repeat;
 }
 
 .dropdown-menu {
@@ -210,7 +212,6 @@ a:focus {
 	min-height: 550px;
 	padding-top: 40px;
 	padding-bottom: 0px;
-	padding-left: 80px;
 }
 
 #headerwrap h3, h5 {
@@ -345,6 +346,8 @@ a:focus {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	background: {{ site.colors.secondary }};
+	background-image: url("{{ site.baseurl }}/assets/img/background.png");
+    background-repeat: repeat;
 }
 
 #footerwrap p {
