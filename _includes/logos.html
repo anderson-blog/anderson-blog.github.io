@@ -1,0 +1,11 @@
+<div id="cwrap">
+    <div class="container">
+        <div class="row centered">
+            {% for logo in site.logos %}
+                <div class="col-lg-2 col-md-2 col-sm-2">
+                    <img src="{{ "/assets/img/logos/" | prepend: site.baseurl }}{{ logo.img }}" class="img-responsive" title="{{ logo.name }}">
+                </div>
+            {% endfor %}
+        </div><! --/row -->
+    </div><! --/container -->
+</div><! --/cwrap -->

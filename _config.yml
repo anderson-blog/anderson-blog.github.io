@@ -84,17 +84,20 @@ members:
         url: mailto:name@domain.com
       - title: twitter
         url: http://twitter.com/handle
-    
-# Clients information. Shown on Home and About pages.
-clients:
-  - name: linux
-    img: client01.png
+
+logos:
   - name: java
-    img: client02.png
+    img: 1.png
+  - name: linux
+    img: 2.png
   - name: arduino
-    img: client03.png
-  - name: github
-    img: client04.png
+    img: 3.png
+  - name: git
+    img: 4.png
+  - name: open hardware
+    img: 5.png
+  - name: gnome
+    img: 6.png
     
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
 about: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
