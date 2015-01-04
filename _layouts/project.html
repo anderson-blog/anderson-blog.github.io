@@ -14,6 +14,10 @@ layout: default
             <h4>Project Details</h4>
             <div class="hline"></div>
             
+			{% if page.description != nill %}
+            <p><b>Description:</b> {{ page.description }}</p>
+            {% endif %}
+
             {% if page.started != nill %}
             <p><b>Started:</b> {{ page.started }}</p>
             {% endif %}
@@ -35,13 +39,38 @@ layout: default
 
             {{ content }}
 
-            <! -- BLOG POSTS LIST -->
-            <div class="col-lg-offset">
+        </div>
+
+    </div><! --/row -->
+
+</div><! --/container -->
+
+
+	{% for post in site.categories['project logs'] %}
+                {% if post.project.first == page.tags.first %}
+                {% if notempty != 'true' %}
+<div id="blue" style="background: {{ site.colors.secondary }};">
+    <div class="container">
+        <div class="row">
+            <h3>Project logs</h3>
+        </div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /blue -->
+
+                {% endif %}
+                {% assign notempty = 'true' %}
+                {% endif %}
+                {% endfor %}
+                {% assign notempty = nil %}
+<div class="container">
+<! -- BLOG POSTS LIST -->
+            <div class="col-lg-8 col-lg-offset-2">
 
                 {% for post in site.categories['project logs'] %}
-                {% if post.project[0] == page.tags[0] %}
-                {% if notempty != 'true' %}
-                <h4>Project logs</h4>
+                {% if post.project.first == page.tags.first %}
+                {% if notempty == 'true' %}
+                <div class="hline"></div>
+            	<div class="spacing"></div>
                 {% endif %}
                 {% assign notempty = 'true' %}
                 <! -- Blog Post -->
@@ -50,20 +79,21 @@ layout: default
                     <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ post.img }}">
                 </a> 
                 -->   
-                <a href="{{ post.url | prepend: site.baseurl }}"><h4 class="ctitle">{{ post.title }}</h4></a>
+                <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
                 <p><csmall>{{ post.date | date: "%b %-d, %Y" }}. | By: {{ post.author }}</csmall></p>
-                {{ post.excerpt }}
-                <p><a href="{{ post.url | prepend: site.baseurl }}">[Read More]</a></p>
-                <div class="hline"></div>
+                {{ post.content }}
+
+
                 {% endif %}
                 {% endfor %}
                 {% if notempty != 'true' %}
-                <h4>No project logs yet...</h4>
+            	<div class="spacing"></div>	
+                <div class="hline" style="border-color: gray;"></div>
+                <center><h4 style="color: gray;">No project logs yet...</h4></center>
+                <div class="hline" style="border-color: gray;"></div>
                 {% endif %}
             </div><! --/col-lg-8 -->
 
-        </div>
-    </div><! --/row -->
 </div><! --/container -->
 
-{% include portfolio.html title="Related Works." limit=5 %}
+{% include portfolio.html title="Related Works" limit=5 %}
