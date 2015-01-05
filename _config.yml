@@ -21,6 +21,12 @@ colors:  #in hex code if not noted else
   footer_heading: "#ffffff"
   footer_content: "#bfc9d3"
   
+links :
+  Home : /
+  Blog : /blog
+  Portfolio : /portfolio
+  About: /about
+
 ### CONTACT SETTINGS ###
 
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc), see http://fortawesome.github.io/Font-Awesome/icons/#brand . Shown in footer.

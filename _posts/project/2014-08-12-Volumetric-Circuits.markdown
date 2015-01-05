@@ -8,9 +8,8 @@ categories:
 - Java
 img: 2048bot/portfolio.png
 carousel:
-- 2048bot/statistics.png
-- 2048bot/first1024.png
-- 2048bot/oldstats.png
+- pyrite/example.png
+- pyrite/gaold.png
 tags:
 - Pyrite
 - ARDUINO 

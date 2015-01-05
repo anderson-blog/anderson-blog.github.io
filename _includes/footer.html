@@ -2,9 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <h4>About</h4>
+                <h4>Pages</h4>
                 <div class="hline-w"></div>
-                <p>{{ site.about }}</p>
+                <ul style="color: white;">
+                {% for link in site.links %} 
+                  <li><a style="color: white;" href = "{{ link[1] }}">{{ link[0] }}</a></li>
+                {% endfor %}
+                </ul>
             </div>
             <div class="col-lg-4">
                 <h4>Social Links</h4>
