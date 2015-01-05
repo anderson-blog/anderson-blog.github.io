@@ -7,6 +7,8 @@
         <li data-target="#carousel-example-generic" data-slide-to="3"></li>
     </ol>
 
+           
+
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         {% assign fpost = site.categories['blog'][0] %}
@@ -15,8 +17,9 @@
                 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ fpost.img }}">
             </a>    
             <a href="{{ fpost.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ fpost.title }}</h3></a>
-            <p><csmall>{{ fpost.date | date: "%b %-d, %Y" }}. | By: {{ fpost.author }}</csmall></p>
+            <p><csmall>{{ fpost.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ fpost.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ fpost.id }}"> </span></a></csmall></p> 
             {{ fpost.excerpt }}
+
         </div>
         {% for post in site.categories['blog'] limit:3  offset:1 %}
         <div class="item">
@@ -24,7 +27,7 @@
                 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ post.img }}">
             </a>    
             <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
-            <p><csmall>{{ post.date | date: "%b %-d, %Y" }}. | By: {{ post.author }}</csmall></p>
+            <p><csmall>{{ post.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ post.id }}"> </span></a></csmall></p> 
             {{ post.excerpt }}
         </div>
         {% endfor %}
