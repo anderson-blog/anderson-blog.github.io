@@ -14,7 +14,21 @@
         {% assign fpost = site.categories['blog'][0] %}
         <div class="item active">
             <a href="{{ fpost.url | prepend: site.baseurl }}">
+                {% if fpost.img != nill %}
                 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ fpost.img }}">
+                {% else %}
+                <div style="position:relative;">
+                <img src="{{ "/assets/img/blog/default850x400.png" | prepend: site.baseurl }}">
+                <div style="left: 0; position:absolute; text-align:center; top: 65px; width: 100%;">
+                {% if fpost.icon %}
+                    {% assign icon = fpost.icon %}
+                {% else %}
+                    {% assign icon = "rocket" %}
+                {% endif %}
+                <i class="fa fa-{{ icon }}" style="color:#212121; font-size:15em"></i>
+                </div>
+                </div>
+                {% endif %}
             </a>    
             <a href="{{ fpost.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ fpost.title }}</h3></a>
             <p><csmall>{{ fpost.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ fpost.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ fpost.id }}"> </span></a></csmall></p> 
@@ -24,7 +38,21 @@
         {% for post in site.categories['blog'] limit:3  offset:1 %}
         <div class="item">
             <a href="{{ post.url | prepend: site.baseurl }}">
+                {% if post.img != nill %}
                 <img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ post.img }}">
+                {% else %}
+                <div style="position:relative;">
+                <img src="{{ "/assets/img/blog/default850x400.png" | prepend: site.baseurl }}">
+                <div style="left: 0; position:absolute; text-align:center; top: 65px; width: 100%;">
+                {% if post.icon %}
+                    {% assign icon = post.icon %}
+                {% else %}
+                    {% assign icon = "rocket" %}
+                {% endif %}
+                <i class="fa fa-{{ icon }}" style="color:#212121; font-size:15em"></i>
+                </div>
+                </div>
+                {% endif %}
             </a>    
             <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
             <p><csmall>{{ post.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ post.id }}"> </span></a></csmall></p> 

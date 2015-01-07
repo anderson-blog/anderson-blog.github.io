@@ -7,8 +7,6 @@ categories:
 - Project Logs
 project:
 - Pyrite
-img: post01.jpg
-thumb: thumb01.jpg
 ---
 
 This is my first prototype using an alpha version of the software: Building an diode-transistor XOR gate. All the algorithms performed accordingly, the gate schematic was fine, but I wanted to place push buttons as inputs and an LED as output, and ended messing all up... But for the first test it was great! :D Here is an video of the process:

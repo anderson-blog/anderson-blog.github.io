@@ -6,7 +6,8 @@ categories:
 - project
 - Programming
 - Java
-img: 2048bot/portfolio.png
+icon:
+- star
 carousel:
 - pyrite/example.png
 - pyrite/gaold.png

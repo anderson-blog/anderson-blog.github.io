@@ -5,7 +5,21 @@
             <a href="{{  project.url | prepend: site.baseurl }}">
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">
+                {% if project.img != nill %}
                 <img src="{{ "/assets/img/project/" | prepend: site.baseurl }}{{ project.img }}" alt="">
+                {% else %}
+                <div style="position:relative;">
+                <img src="{{ "/assets/img/project/default600x450.png" | prepend: site.baseurl }}">
+                <div style="color:#212121; left: 0; position:absolute; text-align:center; top: 65px; width: 100%;">
+                {% if project.icon %}
+                    {% assign icon = project.icon %}
+                {% else %}
+                    {% assign icon = "rocket" %}
+                {% endif %}
+                <i class="fa fa-{{ icon }} fa-5x"></i>
+                </div>
+                </div>
+                {% endif %}
                     <div class="he-view">
                         <div class="bg a0" data-animate="fadeIn">
                             <h3 class="a1" data-animate="fadeInDown">{{ project.title }}</h3>
