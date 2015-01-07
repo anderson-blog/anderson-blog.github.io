@@ -7,7 +7,6 @@ categories:
 - Project Logs
 project:
 - Pyrite
-thumb: thumb01.jpg
 ---
 
 Hi guys, I've been very busy with college lately but I got a few updates to show. 

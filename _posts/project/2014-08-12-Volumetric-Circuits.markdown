@@ -7,7 +7,7 @@ categories:
 - Programming
 - Java
 icon:
-- star
+- cube
 carousel:
 - pyrite/example.png
 - pyrite/gaold.png

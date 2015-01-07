@@ -8,7 +8,6 @@ categories:
 project:
 - Pyrite
 img: post01.jpg
-thumb: thumb01.jpg
 ---
 
 I'm pre-releasing the alpha version of Pyrite, I'm still need to finish the GUI, fix some bugs and optimize the graph algorithms, there is a lot of work to do but will be nice to hear some comments about the software, so be free to look this unfinished build.
