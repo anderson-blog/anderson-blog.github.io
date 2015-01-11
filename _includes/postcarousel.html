@@ -1,10 +1,13 @@
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators" style="margin-bottom: 500px;">
-        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <ol class="carousel-indicators">
+        {% for post in site.categories['blog'] limit:4 %}
+        {% if forloop.first %}
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        {% else %}
+            <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.index0 }}"></li>
+        {% endif %}
+        {% endfor %}
     </ol>
 
            
