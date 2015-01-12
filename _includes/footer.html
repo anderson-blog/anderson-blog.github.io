@@ -2,16 +2,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
-                <h4>Pages</h4>
+                <h4>{{site.label[page.lang].pages}}</h4>
                 <div class="hline-w"></div>
                 <ul style="color: white;">
-                {% for link in site.links %} 
-                  <li><a style="color: white;" href = "{{ link[1] }}">{{ link[0] }}</a></li>
-                {% endfor %}
+                  {% for menu in site.t[page.lang] %}
+                    <li style="display: inline;list-style-type: none;padding-right: 20px;"><a style="color: white;" href="{{ menu[1].url}}">{{menu[1].name | capitalize}}</a></li>
+                  {% endfor %}
                 </ul>
             </div>
             <div class="col-lg-4">
-                <h4>Social Links</h4>
+                <h4>{{site.label[page.lang].sociallinks}}</h4>
                 <div class="hline-w"></div>
         <p>
             {% for network in site.social %}

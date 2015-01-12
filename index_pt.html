@@ -1,42 +1,44 @@
 ---
 layout: index
 title: Home
-permalink: /
+permalink: /br/
 uid: index
-lang: en
+lang: pt
 ---
 
 <div id="service">
-    <h3 style="text-align: center;">LATEST POSTS</h3>
+    <h3 style="text-align: center;">ÚLTIMOS POSTS</h3>
     <div class="container" style="max-width:800px; min-width: 60px; margin:0 auto;">
         {% include postcarousel.html %}
     </div>
 </div>
 
-<h3 style="text-align: center;">LATEST WORKS</h3>
+<h3 style="text-align: center;">ÚLTIMOS PROJETOS</h3>
 {% include portfolio.html limit=10 %}
 
 <div class="container mtb">
     <div class="row">
         <div class="col-lg-4 col-lg-offset-1">
-            <h4>About</h4>
+            <h4>Sobre o Blog</h4>
             <div class="hline"></div>
             <p>Esse blog é aberto a todos os tipos de curiosos, aqui irei compartilhar ideias, filmes, músicas, artigos, livros e mais. Dediquei uma seção especial para meus projetos, onde abordarei os problemas encontrados, as etapas do desenvolvimento, bases teóricas e suas histórias.</p>
-            <center><a href="{{ "/about/" | prepend: site.baseurl }}" class="btn btn-theme">Read More</a></center>
+            <center><a href="{{ "/about/" | prepend: site.baseurl }}" class="btn btn-theme">Leia Mais</a></center>
         </div>
 
         <div class="col-lg-3">
-            <h4>Quick Notes</h4>
+            <h4>Minhas Notas</h4>
             <div class="hline"></div>
-            {% for post in site.categories['quicknote'] %} 
+            {% assign posts=site.categories['quicknote'] | where:"lang", page.lang %}
+            {% for post in posts %} 
                 <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
             {% endfor %}
         </div>
 
         <div class="col-lg-3">
-            <h4>Latest Posts</h4>
+            <h4>Últimos Posts</h4>
             <div class="hline"></div>
-            {% for post in site.categories['blog'] limit:5 %} 
+            {% assign posts=site.categories['blog'] | where:"lang", page.lang %}
+            {% for post in posts limit:5 %} 
                 <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}.</a></p>
             {% endfor %} 
         </div>

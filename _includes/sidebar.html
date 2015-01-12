@@ -6,24 +6,26 @@
             <input type="text" class="form-control" placeholder="Search something">
         </p>
     <div class="spacing"></div> -->
-    <h4>Subscribe</h4>
+    <h4>{{site.label[page.lang].subscribe}}</h4>
     <div class="hline"></div>
         <p>
             <p class="rss-subscribe">Subscribe to this blog <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.</p>
         </p>
     <div class="spacing"></div>
 
-    <h4>Quick Notes</h4>
+    <h4>{{site.label[page.lang].quicknotes}}</h4>
     <div class="hline"></div>
-    {% for post in site.categories['quicknote'] %} 
+    {% assign posts=site.categories['quicknote'] | where:"lang", page.lang %}
+    {% for post in posts %} 
         <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
     {% endfor %}
     <div class="spacing"></div>
 
-    <h4>Recent Posts</h4>
+    <h4>{{site.label[page.lang].recentposts}}</h4>
     <div class="hline"></div>
         <ul class="popular-posts">
-            {% for post in site.categories['blog'] limit:4 %} 
+            {% assign posts=site.categories['blog'] | where:"lang", page.lang %}
+            {% for post in posts limit:4 %} 
                 <li>
                     <a href="{{ post.url  | prepend: site.baseurl }}">
                         {% if post.thumb != nill %}
@@ -49,14 +51,26 @@
 
     <div class="spacing"></div>
 
-    <h4>Categories</h4>
+    <h4>{{site.label[page.lang].categories}}</h4>
     <div class="hline"></div>
-    {% for category in site.categories %}{% unless category.first == "blog" or category.first == "project" or category.first == "quicknote" %}
-        <p>
-            <a href="{{ '/category/#'  | prepend: site.baseurl  }}{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first | capitalize }}</a>
-            <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
-        </p>
-    {% endunless %}{% endfor %}
+    {% for category in site.categories %}
+    {% unless category.first == "blog" or category.first == "project" or category.first == "quicknote" or category.first == "pt" or category.first == "en" %}
+            {% assign posts=site.categories[category.first] | where:"lang", page.lang %}
+            {% for post in posts %}
+            {% if forloop.first %}
+                <p>
+                    {% if page.lang == "pt" %}
+                        {% assign ext = "_br" %}
+                    {% else %}
+                        {% assign ext = "" %}
+                    {% endif %}
+                    <a href="{{ '/category' | append: ext | append: '/#' | prepend: site.baseurl }}{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first | capitalize }}</a>
+                    <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+                </p>
+            {% endif %}
+            {% endfor %}
+    {% endunless %}
+    {% endfor %}
 
     <div class="spacing"></div>
 

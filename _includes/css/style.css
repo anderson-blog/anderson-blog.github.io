@@ -21,6 +21,7 @@
 		padding: 0px;
 	} 
 
+html,
 body { 
 	background: #ffffff; 
 	margin: 0; 
@@ -343,8 +344,9 @@ a:focus {
 
 /* Footer */
 #footerwrap {
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	height: 180px;
 	background: {{ site.colors.secondary }};
 	background-image: url("{{ site.baseurl }}/assets/img/background.png");
     background-repeat: repeat;
@@ -471,4 +473,20 @@ a.anchor{
     position: relative; 
     top: -80px; 
     visibility: hidden;
+}
+
+#container {
+   min-height:100%;
+   position:relative;
+}
+
+#body {
+   padding-bottom:180px;   /* Height of the footer */
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:180px;   /* Height of the footer */
 }
