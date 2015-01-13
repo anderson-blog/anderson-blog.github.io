@@ -1,0 +1,103 @@
+---
+layout: default
+title: Post Checker
+permalink: /bad/
+lang: en
+---
+<div id="blue">
+    <div class="container">
+        <div class="row">
+            <h3>{% if page.wrap_title %}{{ page.wrap_title }}{% else %}{{ page.title }}{% endif %}</h3>
+        </div>
+    </div>
+</div>
+<div class="container mtb" style="margin-top: 20px;">
+    <ul>
+    {% assign errors = 0 %}
+    {% for post in site.posts %}
+        {% assign error = false %}
+        <li>{{ post.path }}</li>
+        <ul>
+            {% if post.ignore == true %}
+                <li>
+                    <b style="color: orange;">
+                    IGNORED</b>
+                </li>
+            {% else %}
+                {% unless post.lang %}      
+                <li>
+                    <b style="color: red; background: black;">
+                    Missing language tag!</b> append "lang: en" to the post.
+                </li>
+                {% assign error = true %}
+                {% endunless %}
+
+                {% unless post.uid %}            
+                <li>
+                    <b style="color: red; background: black;">
+                    Missing uid!</b> append "uid: name-data" to the post.
+                </li>
+                {% assign error = true %}
+                {% endunless %}
+
+                {% assign translated = false %}
+                {% assign uidcount = 0 %}
+                {% assign posts=site.posts | where:"uid", post.uid | sort: 'path' %}
+                {% for otherpost in posts %}
+                    {% if otherpost.uid %}
+                        {% capture uidcount %}{{ uidcount | plus:1 }}{% endcapture %}
+                    {% endif %}
+                    {% if post.lang != otherpost.lang %}
+                        {% assign translated = true %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if translated == false %}
+                <li>
+                    <b style="color: red; background: black;">
+                    Missing translation!</b>
+                </li>
+                {% assign error = true %}
+                {% endif %}
+
+                <!-- Apply a math filter to num to convert it back into a number so you can use numerical operators on it -->
+                {% assign uidcount = uidcount | plus: 0 %}
+
+                {% if uidcount > 2 %}
+                <li>
+                    <b style="color: red; background: black;">
+                    UID is not unique[{{ uidcount }}]!</b>
+                </li>
+                {% assign error = true %}
+                {% endif %}
+
+                {% if post.excerpt == empty or post.excerpt == post.content %}
+                <li>
+                    <b style="color: red; background: black;">
+                    Missing post excerpt!</b> place the tag <!- -more-->" on the post.
+                </li>
+                {% assign error = true %}
+                {% endif %}
+
+                {% if error == false %}            
+                    <li>
+                        <b style="color: green;">
+                        OK</b>
+                    </li>
+                {% else %}
+                    {% capture errors %}{{ errors | plus:1 }}{% endcapture %}
+                    <ul>
+                        {% for item in post %}
+                        {% unless item[0] == "content" or item[0] == "previous" or item[0] == "next" or item[0] == "excerpt" %}
+                        <li>{{ item[0] }}: "{{ item[1] }}"</li>
+                        {% endunless %}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endif %}
+        </ul>
+    {% endfor %}
+    </ul>
+
+    <h1 style="color: red; background: black;">ERROR COUNT: {{ errors }}</h1>
+</div><! --/container -->
