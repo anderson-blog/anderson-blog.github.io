@@ -1,7 +1,8 @@
 <div class="portfolio-centered">
     {% if include.title %}<h3>{{ include.title }}</h3>{% endif %}
     <div class="recentitems portfolio">
-        {% for project in site.categories['project'] limit:include.limit %}
+        {% assign posts = site.categories['project'] | where:"lang", page.lang %}
+        {% for project in posts limit:include.limit %}
             <a href="{{  project.url | prepend: site.baseurl }}">
             <div class="portfolio-item graphic-design">
                 <div class="he-wrap tpl6">

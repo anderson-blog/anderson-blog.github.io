@@ -52,8 +52,8 @@ layout: default
 
 </div><! --/container -->
 
-
-	{% for post in site.categories['project logs'] %}
+    {% assign posts = site.categories['project logs'] | where:"lang", page.lang %}
+	{% for post in posts %}
                 {% if post.project.first == page.tags.first %}
                 {% if notempty != 'true' %}
 <div id="blue" style="background: {{ site.colors.secondary }};">
@@ -73,7 +73,8 @@ layout: default
 <! -- BLOG POSTS LIST -->
             <div class="col-lg-8 col-lg-offset-2">
 
-                {% for post in site.categories['project logs'] %}
+                {% assign iposts = site.categories['project logs'] | where:"lang", page.lang %}
+                {% for post in iposts %}
                 {% if post.project.first == page.tags.first %}
                 {% if notempty == 'true' %}
                 <div class="hline"></div>
