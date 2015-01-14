@@ -13,7 +13,7 @@ layout: default
             <p><img class="img-responsive" src="{{ "/assets/img/blog/" | prepend: site.baseurl }}{{ page.img }}"></p>
             {% endif %}
             <a href="{{ page.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ page.title }}</h3></a>
-            <p><csmall>{{ page.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ page.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ page.id }}"> </span></a> </csmall></p> 
+            <p><csmall>{% include date.html %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ page.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ page.id }}"> </span></a> </csmall></p> 
               
             {{ content }}
 

@@ -107,7 +107,7 @@ layout: default
                     {% endif %}
                 </a>
                 <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
-                <p><csmall>{{ post.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ post.id }}"> </span></a></csmall></p> 
+                <p><csmall>{% include date.html date = post.date %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ post.id }}"> </span></a></csmall></p> 
                 {{ post.content }}
 
                 <a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'> Comment on this project log </a>

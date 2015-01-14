@@ -36,7 +36,7 @@
                 {% endif %}
             </a>    
             <a href="{{ fpost.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ fpost.title }}</h3></a>
-            <p><csmall>{{ fpost.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ fpost.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ fpost.id }}"> </span></a></csmall></p> 
+            <p><csmall>{% include date.html date = fpost.date %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ fpost.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ fpost.id }}"> </span></a></csmall></p> 
             {{ fpost.excerpt }}
 
         </div>
@@ -60,7 +60,7 @@
                 {% endif %}
             </a>    
             <a href="{{ post.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ post.title }}</h3></a>
-            <p><csmall>{{ post.date | date: "%b, %Y" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ post.id }}"> </span></a></csmall></p> 
+            <p><csmall>{% include date.html date = post.date %}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href ='{{ post.url | prepend: site.baseurl }}#disqus_thread'><span class="disqus-comment-count" data-disqus-identifier="{{ post.id }}"> </span></a></csmall></p> 
             {{ post.excerpt }}
         </div>
         {% endfor %}

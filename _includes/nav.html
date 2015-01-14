@@ -24,33 +24,35 @@
           {% if forloop.first %}&#123;{% endif %}<b style="font-weight: {% if page.lang == post.lang %}800{% else %}400{% endif %};">{{ post.lang }}</b>{% if forloop.last %}&#125;{% endif %}
         </a></li>{% endfor %}
         -->
-        {% assign posts=site.pages | where:"uid", page.uid | sort: 'path' %}
-        {% for post in posts %}
-        {% if page.lang != post.lang %}
-        <li>
-          <a href="{{ post.url }}" class="{{ post.lang }}">
-            {
-            <b style="font-weight: {% if page.lang == "pt" %}800{% else %}400{% endif %};">PT</b>/
-            <b style="font-weight: {% if page.lang == "en" %}800{% else %}400{% endif %};">EN</b>
-            }
-          </a>
-        </li>
-        {% endif %}
-        {% endfor %}
+        {% if page.uid %}
+          {% assign posts=site.pages | where:"uid", page.uid | sort: 'path' %}
+          {% for post in posts %}
+          {% if page.lang != post.lang %}
+          <li>
+            <a href="{{ post.url }}" class="{{ post.lang }}">
+              {
+              <b style="font-weight: {% if page.lang == "pt" %}800{% else %}400{% endif %};">PT</b>/
+              <b style="font-weight: {% if page.lang == "en" %}800{% else %}400{% endif %};">EN</b>
+              }
+            </a>
+          </li>
+          {% endif %}
+          {% endfor %}
 
-        {% assign posts=site.posts | where:"uid", page.uid | sort: 'path' %}
-        {% for post in posts %}
-        {% if page.lang != post.lang %}
-        <li>
-          <a href="{{ post.url }}" class="{{ post.lang }}">
-            {
-            <b style="font-weight: {% if page.lang == "pt" %}800{% else %}400{% endif %};">PT</b>/
-            <b style="font-weight: {% if page.lang == "en" %}800{% else %}400{% endif %};">EN</b>
-            }
-          </a>
-        </li>
+          {% assign posts=site.posts | where:"uid", page.uid | sort: 'path' %}
+          {% for post in posts %}
+          {% if page.lang != post.lang %}
+          <li>
+            <a href="{{ post.url }}" class="{{ post.lang }}">
+              {
+              <b style="font-weight: {% if page.lang == "pt" %}800{% else %}400{% endif %};">PT</b>/
+              <b style="font-weight: {% if page.lang == "en" %}800{% else %}400{% endif %};">EN</b>
+              }
+            </a>
+          </li>
+          {% endif %}
+          {% endfor %}
         {% endif %}
-        {% endfor %}
 
         <!--
         {% assign posts=site.posts | where:"name", page.name | sort: 'path' %}

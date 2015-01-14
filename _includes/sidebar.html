@@ -9,7 +9,7 @@
     <h4>{{site.label[page.lang].subscribe}}</h4>
     <div class="hline"></div>
         <p>
-            <p class="rss-subscribe">Subscribe to this blog <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.</p>
+            <p class="rss-subscribe">{{site.label[page.lang].subscribe1}}<a href="{{ "/feed.xml" | prepend: site.baseurl }}">{{site.label[page.lang].subscribe2}}</a>.</p>
         </p>
     <div class="spacing"></div>
 
@@ -44,7 +44,7 @@
                         {% endif %}
                     </a>
                     <p><a href="{{ post.url }}">{{ post.title }}</a></p>
-                <em>Posted on {{ post.date | date_to_string }}</em>
+                <em>{{site.label[page.lang].postedon}} {% include date.html date = post.date %}</em>
             </li>
             {% endfor %} 
         </ul>
@@ -65,7 +65,7 @@
                         {% assign ext = "" %}
                     {% endif %}
                     <a href="{{ '/category' | append: ext | append: '/#' | prepend: site.baseurl }}{{ category | first }}"><i class="fa fa-angle-right"></i> {{ category | first | capitalize }}</a>
-                    <span class="badge badge-theme pull-right">{{ category | last | size }}</span>
+                    <span class="badge badge-theme pull-right">{{ forloop.length }}</span>
                 </p>
             {% endif %}
             {% endfor %}
