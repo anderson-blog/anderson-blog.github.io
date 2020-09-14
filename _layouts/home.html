@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+  {%- include head.html -%}
+  <body>
+    <div class="row">
+      <div class="columnA">
+        <header>
+          <h1>Anderson Antunes</h1>
+        </header>
+
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              {% if post.type %}
+                {{ post.type }}
+              {% else %}
+                {{ post.layout }}
+              {% endif %}
+              {% assign url = post.url | relative_url %}
+              {% case post.layout %}
+                {% when "link" %}
+                   <a href="{{ url }}">{{ post.title | downcase }}</a> <a target="_blank" rel="noopener noreferrer" href="{{ post.link }}"><i class="fa fa-external-link-alt"></i></a></a>
+                {% when "cookie" %}
+                   This is a cookie
+                {% else %}
+                   <a href="{{ url }}">{{ post.title | downcase }}</a>
+              {% endcase %}
+
+            </li>
+          {% endfor %}
+        </ul>
+
+        tags:
+        <ul>
+          {{ site | tag_cloud }}
+        </ul>
+
+        links:
+        <ul>
+          <li>instagram.com/<a href="https://www.instagram.com/anderson_antunes_/">anderson_antunes_</a></li>
+          <li>hackaday.io/<a href="https://hackaday.io/anderson">anderson</a></li>
+          <li>github.com/<a href="https://github.com/anderson-">anderson-</a></li>
+        </ul>
+      </div>
+      <div class="columnB">
+        {% include gallery.html contains="gallery" %}
+      </div>
+    </div>
+  </body>
+</html>

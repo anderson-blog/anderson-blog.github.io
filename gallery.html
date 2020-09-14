@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<h1>G</h1>
+
+<section id="photos">
+  {% for file in site.static_files %}
+    {% if file.path contains "gallery" %}
+      {% if file.extname == '.jpg' %}
+        {% assign filenameparts = file.path | split: "/" %}
+        {% assign filename = filenameparts | last | replace: file.extname,"" %}
+        <a href="/tag/{{filenameparts[3]}}"><img src="{{ file.path }}" alt=""></a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</section>
