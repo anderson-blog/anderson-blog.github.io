@@ -20,6 +20,14 @@ html {
   --plyr-color-main: #ff5393;
 }
 
+
+p > img {
+  margin: 5%;
+  width: 90%;
+  border: 1px solid #ff5393;
+}
+
+
 .fa {
   font-size: 0.7em !important;
 }
