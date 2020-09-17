@@ -9,7 +9,7 @@ layout: default
       {% if file.extname == '.jpg' %}
         {% assign filenameparts = file.path | split: "/" %}
         {% assign filename = filenameparts | last | replace: file.extname,"" %}
-        <a href="/tag/{{filenameparts[3]}}"><img src="{{ file.path }}" alt=""></a>
+        <a href="/tag#{{filenameparts[3]}}"><img src="{{ file.path }}" alt=""></a>
       {% endif %}
     {% endif %}
   {% endfor %}
