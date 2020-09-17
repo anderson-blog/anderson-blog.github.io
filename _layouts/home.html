@@ -25,14 +25,15 @@
                 {% else %}
                    <a href="{{ url }}">{{ post.title | downcase }}</a>
               {% endcase %}
-
             </li>
           {% endfor %}
         </ul>
 
         tags:
         <ul>
-          {{ site | tag_cloud }}
+          {% for tag in site.tags %}
+            <a href="/tags/#{{tag[0]}}">{{ tag[0] }}</a>
+          {% endfor %}
         </ul>
 
         links:
@@ -41,6 +42,8 @@
           <li>hackaday.io/<a href="https://hackaday.io/anderson">anderson</a></li>
           <li>github.com/<a href="https://github.com/anderson-">anderson-</a></li>
         </ul>
+        
+        {%- include footer.html -%}
       </div>
       <div class="columnB">
         {% include gallery.html contains="gallery" %}

@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<a href="{{ site.url }}">..</a>
+<h1>Posts por imagem</h1>
+
+{% for file in site.static_files %}
+  {% if file.extname == '.jpg' %}
+    {% assign filenameparts = file.path | split: '/' %}
+    {% assign filename = filenameparts | last | replace: file.extname,'' %}
+    {% assign change = 0 %}
+
+    {% for post in site.posts %}
+      {% assign images = post.images | split: ' ' %}
+      {% for img in images %}
+        {% if filename == img %}
+          {% assign change = change | plus: 1 %}
+          {% if change > 1 %}
+            {% assign img_ref = img %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+    {% if change > 1 %}
+      <h3 id="{{ img_ref }}">{{ img_ref }}</h3>
+      <ul>
+        {% for post in site.posts %}
+          {% assign images = post.images | split: ' ' %}
+          {% for img in images %}
+            {% if img_ref == img %}
+              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+<hr>
