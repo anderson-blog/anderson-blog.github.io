@@ -75,7 +75,11 @@ a:hover { color: $plain; }
 
 li { margin: 0.4rem 0; }
 
-*:target { background-color: $light; color: $dark; }
+*:target { 
+  background-color: $light; 
+  color: $dark; 
+  padding-left: 0.2em;
+}
 
 .wrapper {
   max-width: 100ch;
