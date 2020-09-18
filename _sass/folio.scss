@@ -53,6 +53,12 @@ p > img {
   color: $highlight;
 }
 
+.image-desc {
+  margin: 5%;
+  width: 90%;
+  border: 1px solid $light;
+}
+
 li > a > .fa {
   font-size: 0.7em !important;
 }
