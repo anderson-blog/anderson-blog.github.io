@@ -26,7 +26,7 @@ Ensino de programação e robótica
 
 Circuitos em 3d
 
-![](/assets/gallery/volumetric circuits/img23.jpg)
+![](/assets/gallery/volumetric_circuits/img23.jpg)
 
 [https://hackaday.io/project/2396-volumetric-circuits](https://hackaday.io/project/2396-volumetric-circuits)
 
