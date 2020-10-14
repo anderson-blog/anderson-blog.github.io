@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt">
-  {%- include head.html -%}
+  <head>
+      {%- include head.html -%}
+  </head>
   <body>
     <div class="row">
       <div class="columnA">
@@ -10,7 +12,7 @@
 
         <ul>
           {% for post in site.posts %}
-            {% if post.layout == "image" %}
+            {% if post.layout == "image" or post.layout == "none" %}
               {% continue %}
             {% endif %}
             <li>

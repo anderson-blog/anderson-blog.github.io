@@ -28,6 +28,28 @@ p > img {
   border: 1px solid $light;
 }
 
+.nb-img {
+  border: none;
+  margin: 0;
+  width: 100%;
+}
+
+.q-desc {
+  margin: -1em 0 0 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  color: $highlight;
+}
+
+.img-desc {
+  margin: -1.3em 0 0 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  color: $highlight;
+}
+
 .img-container {
   position: relative;
 }
@@ -182,6 +204,14 @@ $gapv: 0px;
   margin: 5px;
 }
 
+.mobile-img {
+  display: none;
+}
+
+.desktop-img {
+  display: block;
+}
+
 @media (max-width: 1200px) {
   #photos {
   -moz-column-count:    $maxcolumns;
@@ -196,6 +226,16 @@ $gapv: 0px;
   column-count:         $maxcolumns;
   }
 }
+
+@media (max-width: 900px) {
+  .mobile-img {
+    display: block;
+  }
+  .desktop-img {
+    display: none;
+  }
+}
+
 @media (max-width: 800px) {
   #photos {
   -moz-column-count:    2;
