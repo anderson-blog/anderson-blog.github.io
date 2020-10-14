@@ -284,6 +284,9 @@ button {
   background-color: $dark;
   border: 1px solid $dark;
   // border: 1px solid $highlight;
+
+  &:before { content: '> ' }
+  &:after { content: attr(data-content) ' <' }
 }
 
 button:hover {
