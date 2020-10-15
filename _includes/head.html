@@ -9,7 +9,14 @@
     {{ site.title }}
   {% endif %}
 </title>
-
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-180644699-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-180644699-1');
+</script>
 <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}" />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ site.url }}/assets/css/main.css" />
