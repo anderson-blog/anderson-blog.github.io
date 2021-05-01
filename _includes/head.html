@@ -15,7 +15,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'UA-180644699-1');
+  gtag('config', 'UA-180644699-1', {
+    cookie_domain: 'anderson-blog.github.io',
+    cookie_flags: 'SameSite=None;Secure',
+  });
 </script>
 <link rel="shortcut icon" type="image/x-icon" href="/{{ site.favicon }}" />
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300&display=swap" rel="stylesheet">
