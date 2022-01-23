@@ -1,7 +1,9 @@
 #!/bin/sh
 
-find . -name '*.jpg' | grep -v '/tmp/' | 
+find . -regextype posix-egrep -regex './tmp/[^.].*' | 
     while IFS= read -r img; do
+    	mv $img "$(echo $img | tr '[:upper:]' '[:lower:]')"
+    	img="$(echo $img | tr '[:upper:]' '[:lower:]')"
 	if [ $(du -b "$img" | cut -f1) -gt 150000 ]; then
 		echo " >> warning $img size is $(du -h "$img"), compressing..."
 		convert "$img" -resize 1024x "$img"
