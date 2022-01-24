@@ -13,6 +13,14 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+.logo {
+  background-color: $light;
+  -webkit-mask: url('/assets/logo.svg') no-repeat left;
+  mask: url('/assets/logo.svg') no-repeat left;
+  height: 4em;
+  margin: 0.4em 0 1.5em 0;
+  display: block;
+}
 
 .video-player {
   margin: 5%;
@@ -152,7 +160,7 @@ blockquote {
 /* Create two equal columns that floats next to each other */
 .columnA {
   float: right;
-  width: 55%;
+  width: 58%;
 }
 .columnB {
   float: left;
