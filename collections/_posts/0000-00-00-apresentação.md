@@ -5,7 +5,7 @@ date: 20/01/1993
 
 Programação usando um botão e pot
 
-![](/assets/gallery/game/img3.jpg)
+![](/assets/gallery/game/img3.webp)
 {% include youtube-player.html youtube="mlf7Syvy8ZU" %}
 
 Jogo usando toque e sons
@@ -22,11 +22,11 @@ Ensino de programação e robótica
 
 [http://petrobo.github.io/](http://petrobo.github.io/)
 
-![](/assets/gallery/jifi/img24.jpg)
+![](/assets/gallery/jifi/img24.webp)
 
 Circuitos em 3d
 
-![](/assets/gallery/volumetric_circuits/img23.jpg)
+![](/assets/gallery/volumetric_circuits/img23.webp)
 
 [https://hackaday.io/project/2396-volumetric-circuits](https://hackaday.io/project/2396-volumetric-circuits)
 
@@ -40,7 +40,7 @@ Projeto de acessibilidade
 
 {% include youtube-player.html youtube="GLwe-e_lSi8" %}
 
-![](/assets/gallery/helena_glove/luva.jpg)
-![](/assets/gallery/helena_glove/img22.jpg)
-![](/assets/gallery/helena_glove/img6.jpg)
-![](/assets/gallery/helena_glove/img7.jpg)
+![](/assets/gallery/helena_glove/luva.webp)
+![](/assets/gallery/helena_glove/img22.webp)
+![](/assets/gallery/helena_glove/img6.webp)
+![](/assets/gallery/helena_glove/img7.webp)

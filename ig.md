@@ -11,7 +11,7 @@ layout: default
 <section id="photos">
   {% for file in site.static_files %}
     {% if file.path contains "gallery" and file.path contains "concept" %}
-      {% if file.extname == '.jpg' %}
+      {% if file.extname == '.webp' %}
         {% assign filenameparts = file.path | split: "/" %}
         {% assign filename = filenameparts | last | replace: file.extname,"" %}
   			<img src="{{ file.path }}" alt="">
