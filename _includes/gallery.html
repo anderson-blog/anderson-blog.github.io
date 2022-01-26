@@ -1,37 +1,92 @@
-<div id="photos">
-  {% for file in site.static_files %}
-    {% if file.path contains include.contains %}
-      {% if file.extname == '.webp' %}
-        {% assign filenameparts = file.path | split: '/' %}
-        {% assign filename = filenameparts | last | replace: file.extname,'' %}
-        {% assign ref = '/tags#' | append: filenameparts[3] %}
-        {% assign change = 0 %}
+<div id="photos-simple">
+  <div id="photos-left">
+    {% assign left = false %}
+    {% for file in site.static_files %}
+      {% if file.path contains include.contains %}
+        {% if file.extname == '.webp' %}
+          {% assign filenameparts = file.path | split: '/' %}
+          {% assign filename = filenameparts | last | replace: file.extname,'' %}
+          {% assign ref = '/tags#' | append: filenameparts[3] %}
+          {% assign change = 0 %}
+          {% if left %}
+            {% assign left = false %}
+            {% continue %}
+          {% else %}
+            {% assign left = true %}
+          {% endif %}
 
-        {% for post in site.posts %}
-          {% assign images = post.images | split: ' ' %}
-          {% for img in images %}
-            {% if filename == img %}
-              {% assign ref = post.url %}
-              {% assign change = change | plus: 1 %}
-              {% if change > 1 %}
-                {% assign ref = '/multirefs#' | append: img %}
+
+          {% for post in site.posts %}
+            {% assign images = post.images | split: ' ' %}
+            {% for img in images %}
+              {% if filename == img %}
+                {% assign ref = post.url %}
+                {% assign change = change | plus: 1 %}
+                {% if change > 1 %}
+                  {% assign ref = '/multirefs#' | append: img %}
+                {% endif %}
               {% endif %}
-            {% endif %}
+            {% endfor %}
           {% endfor %}
-        {% endfor %}
 
-        <div class="img-container">
-          <a href="{{ref}}"><img src="{{ file.path }}" alt="" loading="lazy">
-            {% if change == 0 %}
-              <i class="img-tag fa fa-tag"></i>
-            {% elsif change == 1 %}
-              <i class="img-tag fa fa-paragraph"></i>
-            {% elsif change > 1 %}
-              <i class="img-tag fa fa-question-circle"></i>
-            {% endif %}
-          </a>
-        </div>
+          <div class="img-container">
+            <a href="{{ref}}"><img src="{{ file.path }}" alt="" loading="lazy">
+              {% if change == 0 %}
+                <i class="img-tag fa fa-tag"></i>
+              {% elsif change == 1 %}
+                <i class="img-tag fa fa-paragraph"></i>
+              {% elsif change > 1 %}
+                <i class="img-tag fa fa-question-circle"></i>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
+    {% endfor %}
+  </div>
+  <div id="photos-right">
+    {% assign left = false %}
+    {% for file in site.static_files %}
+      {% if file.path contains include.contains %}
+        {% if file.extname == '.webp' %}
+          {% assign filenameparts = file.path | split: '/' %}
+          {% assign filename = filenameparts | last | replace: file.extname,'' %}
+          {% assign ref = '/tags#' | append: filenameparts[3] %}
+          {% assign change = 0 %}
+          {% if left %}
+            {% assign left = false %}
+          {% else %}
+            {% assign left = true %}
+            {% continue %}
+          {% endif %}
+
+
+          {% for post in site.posts %}
+            {% assign images = post.images | split: ' ' %}
+            {% for img in images %}
+              {% if filename == img %}
+                {% assign ref = post.url %}
+                {% assign change = change | plus: 1 %}
+                {% if change > 1 %}
+                  {% assign ref = '/multirefs#' | append: img %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+          <div class="img-container">
+            <a href="{{ref}}"><img src="{{ file.path }}" alt="" loading="lazy">
+              {% if change == 0 %}
+                <i class="img-tag fa fa-tag"></i>
+              {% elsif change == 1 %}
+                <i class="img-tag fa fa-paragraph"></i>
+              {% elsif change > 1 %}
+                <i class="img-tag fa fa-question-circle"></i>
+              {% endif %}
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>

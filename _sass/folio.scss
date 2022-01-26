@@ -180,6 +180,7 @@ blockquote {
     width: 100%;
   }
   .columnB {
+    padding-top: 2em;
     width: 100%;
   }
 }
@@ -204,12 +205,24 @@ $gapv: 0px;
    padding-bottom: 0;
 }
 
-#photos img {
+#photos img, #photos-simple img {
   /* Just in case there are inline attributes */
   width: calc(100% - 15px) !important;
   height: auto !important;
   border: 1px solid $dark;
   margin: 5px;
+}
+
+#photos-left {
+  float: left;
+  width: 50%;
+  padding-right: $gaph;
+} 
+
+#photos-right {
+  float: right;
+  width: 50%;
+  padding-left: $gaph;
 }
 
 .mobile-img {
@@ -250,12 +263,18 @@ $gapv: 0px;
   -webkit-column-count: 2;
   column-count:         2;
   }
+  #photos-left, #photos-right {
+    width: 100%;
+  }
 }
 @media (max-width: 400px) {
   #photos {
   -moz-column-count:    1;
   -webkit-column-count: 1;
   column-count:         1;
+  }
+  #photos-left, #photos-right {
+    width: 100%;
   }
 }
 
