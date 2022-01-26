@@ -21,7 +21,7 @@
         {% endfor %}
 
         <div class="img-container">
-          <a href="{{ref}}"><img src="{{ file.path }}" alt="">
+          <a href="{{ref}}"><img src="{{ file.path }}" alt="" loading="lazy">
             {% if change == 0 %}
               <i class="img-tag fa fa-tag"></i>
             {% elsif change == 1 %}
