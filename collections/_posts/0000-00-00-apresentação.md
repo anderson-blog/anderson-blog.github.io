@@ -1,6 +1,7 @@
 ---
 layout: log
 date: 20/01/1993
+video: true
 ---
 
 Programação usando um botão e pot
