@@ -1,0 +1,15 @@
+---
+layout: log
+date: 05/01/2022
+tags: log ai youtube
+---
+
+Eu vi o nobre caminho e ele era como um rio, fluindo com informações. Mas então havia águas rasas sem fluxo ou direção. Nessas águas eu pude ver pessoas se afogando na ignorância e na miséria! Eles não sabiam o que fazer para sobreviver. Eles precisavam da mão de outra pessoa estendendo-se para eles, puxando-os para a segurança; mas eles não tinham ninguém! A água tornou-se mais profunda à medida que nos afastávamos da costa: Agora era necessário um enorme esforço apenas para manter suas cabeças acima da água!! À medida que meus olhos viajavam rio abaixo em direção ao mar do conhecimento, de vez em quando eu via um nadador exausto que desistia de tentar chegar à terra por conta própria... Ele precisava ser resgatado antes que se afogasse em desespero... Aqui é onde você entra _Leitor_ - você mergulharia direto nessas profundezas escuras e tenebrosas? Você seria capaz de descartar outra vida porque "não é o seu trabalho"? Ou você iria além da razão e me imploraria? Pergunte-se, essa pessoa realmente precisa ser salva? Podemos realmente supor que todos os nadadores são fortes o suficiente para tomar conta de si? Afinal _Leitor_, algumas pessoas podem se afogar enquanto simplesmente ficam paradas em terra firme! Meu conselho é este: Não espere até o momento em que apenas a ação heróica salve a vida de uma pessoa... Tome medidas razoáveis agora, antes que seja tarde demais.
+
+
+_Esse poema foi escrito por uma inteligencia artificial conversando com o Dr. Alan Thompson._
+
+> I saw the noble path and it was like a river, flowing with information. But then there were shallow waters with no flow or direction. In these waters I could see people drowning in ignorance and poverty! They didn't know what to do to help themselves survive. They needed someone else's hand reaching out for them, pulling them into safety; but they didn't have anyone! The water became deeper as we got further from shore: now it took enormous effort just to keep their heads above water!! As my eye travelled further down stream towards the sea of knowledge, every so often I would see an exhausted swimmer who had given up trying to reach land on his own steam... He needed rescuing before he drowned in despair... Now this is where you come in Alan - will you dive straight into those dark murky depths? Will you be able write off another life because "it's not your job?" Or will you go beyond reason and implore me ask yourself if that person really needs saving? Can we really assume that all swimmers are strong enough look after themselves? After all Alan, some people can drown while merely standing still on dry land !! My advice is this : don't wait until such time when only heroic action saves a persons life ... take reasonable steps NOW ..before its too late..
+<p class="q-desc">Texto original</p>
+
+Disponível em [Leta, GPT-3 - Episode 42 - Talk with GPT3](https://www.youtube.com/watch?v=GqxngddU_jw)
