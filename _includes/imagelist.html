@@ -1,0 +1,11 @@
+
+{% assign images = page.images | split: ' ' %}
+{% for img in images %}
+    {% for file in site.static_files %}
+        {% if file.extname == '.webp' %}
+            {% if file.path contains img %}
+                <img class="image-desc" src="{{ file.path }}" alt="">
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}

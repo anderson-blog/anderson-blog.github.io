@@ -7,21 +7,23 @@
             <div class="wrapper">
                 {% if page.images %}
                     <div class="row">
-                        <div class="columnA">
+                        {% assign postcon = content | strip_newlines %}
+                        {% if postcon != "" %}
+                            <div class="columnA">
+                                {%- include content.html -%}
+                            </div>
+                            <div class="columnB">
+                                {%- include imagelist.html -%}
+                            </div>
+                        {% else %}
+                            {% capture content %}
+                                {{ page.short }}
+                                <br>
+                                <br>
+                                {%- include imagelist.html -%}
+                            {% endcapture %}
                             {%- include content.html -%}
-                        </div>
-                        <div class="columnB">
-                            {% assign images = page.images | split: ' ' %}
-                            {% for img in images %}
-                                {% for file in site.static_files %}
-                                    {% if file.extname == '.webp' %}
-                                        {% if file.path contains img %}
-                                            <img class="image-desc" src="{{ file.path }}" alt="">
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            {% endfor %}
-                        </div>
+                        {% endif %}
                     </div>
                 {% else %}
                     {%- include content.html -%}

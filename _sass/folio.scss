@@ -18,7 +18,7 @@ html {
   -webkit-mask: url('/assets/logo.svg') no-repeat left;
   mask: url('/assets/logo.svg') no-repeat left;
   height: 4em;
-  margin: 0.4em 0 1.5em 0;
+  margin: 0.4em 0 1.5em 0.3em;
   display: block;
 }
 
@@ -84,8 +84,8 @@ p > img {
 }
 
 .image-desc {
-  margin: 5%;
-  width: 90%;
+  margin: 0.5em 0.5em 0.2em 0.5em;
+  width: calc(100% - 0.5em);
   border: 1px solid $light;
 }
 
