@@ -1,4 +1,5 @@
 $light: #ff538a;
+$wiki: #0b1c51;
 $dark: #152868;
 $highlight: #e3e305;
 $plain: #fbf1ca;
@@ -100,7 +101,7 @@ li > a > .fa {
 
 h1 { font-weight: 300; text-transform: lowercase; }
 
-h2, h3, h4, h5, h6 { font-weight: 300; margin-top: 3rem; }
+h2, h3, h4, h5, h6 { font-weight: 300; margin-top: 0; }
 
 hr { color: #9694ce; margin: 2rem 0; }
 
@@ -118,9 +119,22 @@ li { margin: 0.4rem 0; }
 }
 
 .wrapper {
-  max-width: 100ch;
+  background-color: $plain;
+  color: $wiki;
+  padding: 3ch;
+  border-radius: 1em;
+  max-width: 110ch;
   margin: 4rem auto;
-  padding: 0 1rem;
+  a { color: $light; }
+  a:hover { color: mediumvioletred; }
+  blockquote {
+    font-style: italic;
+    border: thin solid $light;
+    padding: 1rem;
+    p { margin: 0; color: $wiki;}
+  }
+  .q-desc { color: $wiki; }
+  .img-desc { color: $light; }
 }
 
 hr {
@@ -223,6 +237,110 @@ $gapv: 0px;
   float: right;
   width: 50%;
   padding-left: $gaph;
+}
+
+.close {
+  display: flex;
+  margin: 0 -1.8em 0 -1.8em;
+  width: calc(100% + 3.6em);
+}
+
+.close-after {
+  padding-top: 1em;
+  margin: 0 -2em 0 -2em;
+  background-color: $dark;
+}
+
+.close-after + * {
+  margin: 0 -2em 0 -2em;
+  background-color: $dark;
+}
+
+.close-border-mid {
+  width: 100%;
+}
+
+.close-border-pre {
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $dark;
+}
+
+.close-border-pre:before {
+  display: block;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $plain;
+  border-bottom-left-radius: 50%;
+}
+
+.close-border-pos {
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $dark;
+}
+
+.close-border-pos:before {
+  display: block;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $plain;
+  border-bottom-right-radius: 50%;
+}
+
+.open {
+  display: flex;
+  margin: 0 -1.8em 0 -1.8em;
+  width: calc(100% + 3.6em);
+  background-color: $dark;
+}
+
+
+.open-prev {
+  padding-top: 1em;
+  margin: 0 -2em 0 -2em;
+  background-color: $dark;
+}
+
+.open-border-mid {
+  width: 100%;
+  background: $plain;
+}
+
+.open-border-pre {
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $dark;
+}
+
+.open-border-pre:before {
+  display: block;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $plain;
+  border-top-left-radius: 50%;
+}
+
+.open-border-pos {
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $dark;
+}
+
+.open-border-pos:before {
+  display: block;
+  content: "";
+  height: 2em;
+  width: 2em;
+  background: $plain;
+  border-top-right-radius: 50%;
 }
 
 .mobile-img {

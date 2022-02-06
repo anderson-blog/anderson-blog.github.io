@@ -41,9 +41,11 @@ A biblioteca de funções padrão da linguagem varia de acordo com a plataforma.
  
 Na sequência você pode ver o diagrama de sintaxe da linguagem, um diagrama inspirado em mapas ferroviarios, lido da esquerda para a direita, e que representa todas as combinações válidas dos simobolos usados na linguagem. Se existe um caminho no mapa, então, ele é um programa válido e pode ser interpretado.
 
+{% include close-wrapper.html %}
 <img class="nb-img desktop-img" src="https://start-lang.github.io/core/grammar/railroad-svg/desktop_blog.svg">
 <img class="nb-img mobile-img" src="https://start-lang.github.io/core/grammar/railroad-svg/mobile_blog.svg">
 <p class="img-desc">diagrama de sintaxe / mapa ferroviario</p>
+{% include open-wrapper.html %}
  
 ### operações
 
