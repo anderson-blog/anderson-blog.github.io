@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html class="tmp" lang="pt">
+    {%- include head.html -%}
+    {% assign code = page.id | split: '/' | last %}
+    {% assign category = code | slice: 0,2 | round %}
+    {% assign category = site.data.serial_categories[category] %}
+    {% assign revision = code | slice: 2,1 | round %}
+    {% assign number = code | slice: 3,3 | round %}
+    <body>
+        <main class="page-content" aria-label="Content">
+            <div class="wiki">
+                <div class="row">
+                    <div class="columnA">
+                        <a href="{{ site.url }}">/home</a>
+                        <h1>{{ page.title }}</h1>
+
+                        {{ content }}
+
+                        {% if page.link %}
+                            <a target="_blank" rel="noopener noreferrer" href="{{ page.link }}">acesse aqui</a>
+
+                            <br>
+                            <br>
+                        {% endif %}
+
+                        <br>
+                        tags:
+                        {% for tag in page.tags %}
+                            <a href="/tags#{{tag}}">{{ tag }}</a>
+                        {% endfor %}
+
+                        <br>
+                        <br>
+                        {%- include footer.html -%}
+                    </div>
+                    <div class="columnB">
+                        <div id="wiki">
+                            <div class="wiki-header">{{ page.title }}</div>
+
+                            {% for file in site.static_files %}
+                                {% if file.extname == '.webp' %}
+                                    {% if file.path contains page.pic %}
+                                        <img class="wiki-img" src="{{ file.path }}" alt="">
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+
+                            <div class="flex">
+                                <div class="wiki-key">identificador</div>
+                                <div class="wiki-val">#{{ number }}</div>
+                            </div>
+                            <div class="flex">
+                                <div class="wiki-key">revisão</div>
+                                <div class="wiki-val">rev 1.{{ revision }}</div>
+                            </div>
+                            <div class="flex">
+                                <div class="wiki-key">categoria</div>
+                                <div class="wiki-val">{{ category }}</div>
+                            </div>
+                            <div class="flex">
+                                <div class="wiki-key">código</div>
+                                <div class="wiki-val">{{ code }}</div>
+                            </div>
+                            
+                            <div class="wiki-header">bom</div>
+                            <ul>
+                                {% for item in page.bom %}
+                                    <li class="upper">
+                                        {{ item[1] }}x - {{ item[0] }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            {% if page.downloads %}
+                                <div class="wiki-header">downloads</div>
+                                <ul>
+                                    {% for item in page.downloads %}
+                                    <li class="wiki-val">
+                                        <a href="{{ item[1] }}">{{ item[0] }}</a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>
+
+
+                        {% assign images = page.images | split: ' ' %}
+                        {% for img in images %}
+                            {% for file in site.static_files %}
+                                {% if file.extname == '.webp' %}
+                                    {% if file.path contains img %}
+                                        <img class="image-desc" src="{{ file.path }}" alt="">
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

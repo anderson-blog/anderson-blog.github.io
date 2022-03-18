@@ -9,4 +9,4 @@ permalink: /:collection/:title
 collections:
   serial:
     output: true
-    permalink: /:collection/:title
+    permalink: /:collection/:name

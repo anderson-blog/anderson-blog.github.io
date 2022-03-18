@@ -136,6 +136,37 @@ li { margin: 0.4rem 0; }
   .img-desc { color: $light; }
 }
 
+.wiki {
+  background-color: $plain;
+  color: $wiki;
+  padding: 3ch;
+  border-radius: 1em;
+  max-width: 120ch;
+  margin: 4rem auto;
+  a { color: $light; }
+  a:hover { color: mediumvioletred; }
+  blockquote {
+    font-style: italic;
+    border: thin solid $light;
+    padding: 1rem;
+    p { margin: 0; color: $wiki;}
+  }
+  .q-desc { color: $wiki; }
+  .img-desc { color: $light; }
+
+
+  border-radius: 1em;
+  margin: 4rem auto;
+  .columnA {
+    float: left;
+    width: 64%;
+  }
+  .columnB {
+    float: right;
+    width: 35%;
+  }
+}
+
 hr {
   text-align: center;
   border: 0;
@@ -437,4 +468,65 @@ button:hover {
   background-color: $highlight;
   border: 1px solid $highlight;
   color: $dark;
+}
+
+#wiki {    
+  margin: 0.5em 0.5em 0.2em 0.5em;
+  width: calc(100% - 0.5em);
+  border: 1px solid $highlight;
+  background-color: $dark;
+
+  color: #ff538a;
+  a { color: $highlight; }
+  a:hover { color: goldenrod; }
+}
+
+.wiki-header {
+  font-weight: bolder;
+  text-transform: uppercase;
+  background-color: black;
+  color: $plain;
+  width: 100%;
+  height: 1.5em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.wiki-header:first-child {
+  margin-top: 0;
+}
+
+.wiki-img {
+  margin: 1em;
+  width: calc(100% - 2em);
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.wiki-key {
+  color: $plain;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-left: 1em;
+  margin-right: auto;
+}
+
+.wiki-val {
+  color: $highlight;
+  text-transform: uppercase;
+  margin-right: 1em;
+  margin-left: auto;
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.tmp {
+  background-color: $wiki;
 }
