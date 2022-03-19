@@ -25,12 +25,6 @@
                         {% endif %}
 
                         <br>
-                        tags:
-                        {% for tag in page.tags %}
-                            <a href="/tags#{{tag}}">{{ tag }}</a>
-                        {% endfor %}
-
-                        <br>
                         <br>
                         {%- include footer.html -%}
                     </div>
@@ -76,7 +70,7 @@
                                 <ul>
                                     {% for item in page.downloads %}
                                     <li class="wiki-val">
-                                        <a href="{{ item[1] }}">{{ item[0] }}</a>
+                                        <a href="{{ item[1] }}" target="_blank">{{ item[0] }}</a>
                                     </li>
                                     {% endfor %}
                                 </ul>

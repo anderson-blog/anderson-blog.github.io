@@ -10,14 +10,16 @@
     <br>
 {% endif %}
 
-<br>
-tags:
-{% for tag in page.tags %}
-    <a href="/tags#{{tag}}">{{ tag }}</a>
-{% endfor %}
+{% if page.collection == 'posts' %}
+    <br>
+    tags:
+    {% for tag in page.tags %}
+        <a href="/tags#{{tag}}">{{ tag }}</a>
+    {% endfor %}
+    <br>
+    <br>
+{% endif %}
 
-<br>
-<br>
 {%- include footer.html -%}
 <br>
 <br>
