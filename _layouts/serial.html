@@ -39,7 +39,7 @@
                             <div class="wiki-header">{{ page.title }}</div>
 
                             {% for file in site.static_files %}
-                                {% if file.extname == '.webp' %}
+                                {% if site.formats contains file.extname %}
                                     {% if file.path contains page.pic %}
                                         <img class="wiki-img" src="{{ file.path }}" alt="">
                                     {% endif %}
@@ -87,7 +87,7 @@
                         {% assign images = page.images | split: ' ' %}
                         {% for img in images %}
                             {% for file in site.static_files %}
-                                {% if file.extname == '.webp' %}
+                                {% if site.formats contains file.extname %}
                                     {% if file.path contains img %}
                                         <img class="image-desc" src="{{ file.path }}" alt="">
                                     {% endif %}

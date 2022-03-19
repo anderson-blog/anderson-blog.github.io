@@ -6,6 +6,13 @@ tag_page_dir: tag
 collections_dir: collections
 permalink: /:collection/:title
 
+formats:
+  - .svg
+  - .png
+  - .jpg
+  - .webp
+  - .gif
+
 collections:
   serial:
     output: true
