@@ -11,26 +11,12 @@
         <main class="page-content" aria-label="Content">
             <div class="wiki">
                 <div class="row">
-                    <div class="columnA">
-                        <a href="{{ site.url }}">/home</a>
-                        <h1>{{ page.title }}</h1>
+                    <a href="{{ site.url }}">/home</a>
+                    <h1>{{ page.title }}</h1>
 
-                        {{ content }}
-
-                        {% if page.link %}
-                            <a target="_blank" rel="noopener noreferrer" href="{{ page.link }}">acesse aqui</a>
-
-                            <br>
-                            <br>
-                        {% endif %}
-
-                        <br>
-                        <br>
-                        {%- include footer.html -%}
-                    </div>
                     <div class="columnB">
                         <div id="wiki">
-                            <div class="wiki-header">{{ page.title }}</div>
+                            <div class="wiki-header">especificações</div>
 
                             {% for file in site.static_files %}
                                 {% if site.formats contains file.extname %}
@@ -76,19 +62,30 @@
                                 </ul>
                             {% endif %}
                         </div>
-
-
-                        {% assign images = page.images | split: ' ' %}
-                        {% for img in images %}
-                            {% for file in site.static_files %}
-                                {% if site.formats contains file.extname %}
-                                    {% if file.path contains img %}
-                                        <img class="image-desc" src="{{ file.path }}" alt="">
-                                    {% endif %}
-                                {% endif %}
-                            {% endfor %}
-                        {% endfor %}
                     </div>
+                    <div class="columnA">
+                        {{ content }}
+
+                        {% if page.link %}
+                            <a target="_blank" rel="noopener noreferrer" href="{{ page.link }}">acesse aqui</a>
+
+                            <br>
+                            <br>
+                        {% endif %}
+                    </div>
+                    <br>
+                    {% assign images = page.images | split: ' ' %}
+                    {% for img in images %}
+                        {% for file in site.static_files %}
+                            {% if site.formats contains file.extname %}
+                                {% if file.path contains img %}
+                                    <img class="image-desc" src="{{ file.path }}" alt="">
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                    <br>
+                    {%- include footer.html -%}
                 </div>
             </div>
         </main>
