@@ -31,7 +31,8 @@ html {
 
 
 p > img {
-  margin: 2em;
+  margin-left: 2em;
+  margin-right: 2em;
   width: calc(100% - 4em);
   border: 1px solid $light;
 }
